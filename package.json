@@ -1,6 +1,6 @@
 {
-    "name": "abhijais",
-    
+    "name": "ui-product-manager",
+    "version": "0.0.4",
     "dependencies": {
     "bower": "*"
   }

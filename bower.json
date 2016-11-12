@@ -3,9 +3,10 @@
   "name": "ui-product-manager",
   
   "dependencies": {
-    "angular-bootstrap": "0.*.*",
-    "angular-ui-utils": "0.*.*",
-    "toastr": "2.*.*",
-    "angular-charts": "0.*.*"
+    "angular": "1.5.8",
+    "angular-resource": "1.5.8",
+    "angular-ui-router": "0.*.*",
+    "angular-mocks": "1.*.*",
+    "angular-ui-mask": "*"
   }
 }
