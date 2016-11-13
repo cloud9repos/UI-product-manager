@@ -1,6 +1,6 @@
 {
     "name": "ui-product-manager",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "scripts": {
         "postinstall": "bower cache clean && bower install"
     },
