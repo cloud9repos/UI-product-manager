@@ -15,6 +15,7 @@
         <script src="bower_components/angular-mocks/angular-mocks.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="bower_components/angular-ui-mask/src/mask.js"></script>
         
         <!-- Application Script -->
@@ -24,6 +25,7 @@
 
         
         <!-- Product Controllers -->
+        <script src="app/addProducts/addProductsCtrl.js"></script>
         
     </head>
     
@@ -32,25 +34,25 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a data-toggle="tab" href="#dashboard">
+                    <li>
+                        <a ui-sref="dashboard">
                             Dashboard
                         </a>
                     </li>
                     <li>
-                        <a data-toggle="tab" href="#add-products">
+                        <a ui-sref="addProducts">
                             Bulk Product Add
                         </a>
                     </li>
                     <li>
-                        <a data-toggle="tab" href="#update-products">
+                        <a ui-sref="updateProducts">
                             Bulk Product Update
                         </a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#faqs">
+                        <a ui-sref="faqs">
                             <span class="glyphicon glyphicon-question-sign"></span>
                             FAQs
                         </a>
@@ -60,7 +62,7 @@
         </nav>
         
         <div class="container">
-            
+            <div ui-view></div>
         </div>
         
     </body>

@@ -7,6 +7,7 @@
     "angular-resource": "1.5.8",
     "angular-ui-router": "0.*.*",
     "angular-mocks": "1.*.*",
-    "angular-ui-mask": "*"
+    "angular-ui-mask": "*",
+    "angular-bootstrap": "*"
   }
 }
