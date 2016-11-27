@@ -14,8 +14,6 @@
                 "$urlRouterProvider",
                 function($stateProvider, $urlRouterProvider) {
                     
-                    console.log("==========test")
-                    
                     //default url
                     $urlRouterProvider.otherwise("/")
                     
@@ -32,21 +30,21 @@
                         .state("addProducts", {
                             url: "/addProducts",
                             templateUrl: "app/addProducts/addProductsView.html",
-                            controller: "AddProductsCtrl as addProductsCtrlAls"
+                            controller: "AddProductsCtrl as APCtrl"
                         })
                         
                         //update products
                         .state("updateProducts", {
                             url: "/updateProducts",
                             templateUrl: "app/updateProducts/updateProductsView.html",
-                            controller: "updateProducts as updateProductsCtrlAls"
+                            controller: "UpdateProductsCtrl as updateProductsCtrlAls"
                         })
                         
                         //update products
                         .state("faqs", {
                             url: "/faqs",
-                            templateUrl: "app/updateProducts/faqsView.html",
-                            controller: "updateProducts as updateProductsCtrlAls"
+                            templateUrl: "app/faqs/faqsView.html",
+                            controller: "FaqsCtrl as faqsCtrlAls"
                         })
                     
                 }])

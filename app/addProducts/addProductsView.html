@@ -1,6 +1,117 @@
-<form class="form-horizontal">
-    <label class="control-label col-sm-2" for="email">Email:</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
+
+<h2>Product Template</h2>
+<div class="panel-group" id="accordion">
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-parent="#accordion" 
+          ng-click="isCollapsedDI = !isCollapsedDI; glyphiconChangeDI= isCollapsedDI ? 'glyphicon glyphicon-menu-right' : 'glyphicon glyphicon-menu-down'">
+          <span class={{glyphiconChangeDI}}></span>
+          Description & Images</a>
+      </h4>
     </div>
-</form>
+    <div uib-collapse="isCollapsedDI">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-parent="#accordion" 
+          ng-click="isCollapsedPrice = !isCollapsedPrice; glyphiconChangePrice= (isCollapsedPrice) ? 'glyphicon glyphicon-menu-right' : 'glyphicon glyphicon-menu-down'">
+          <span class={{glyphiconChangePrice}}></span>
+          Pricing</a>
+      </h4>
+    </div>
+    <div uib-collapse="isCollapsedPrice">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-parent="#accordion" 
+          ng-click="isCollapsedInventory = !isCollapsedInventory; glyphiconChangeInventory= (isCollapsedInventory) ? 'glyphicon glyphicon-menu-right' : 'glyphicon glyphicon-menu-down'">
+          <span class={{glyphiconChangeInventory}}></span>
+          Inventory</a>
+      </h4>
+    </div>
+    <div uib-collapse="isCollapsedInventory">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-parent="#accordion" 
+          ng-click="isCollapsedShipping = !isCollapsedShipping; glyphiconChangeShipping= (isCollapsedShipping) ? 'glyphicon glyphicon-menu-right' : 'glyphicon glyphicon-menu-down'">
+          <span class={{glyphiconChangeShipping}}></span>
+          Shipping</a>
+      </h4>
+    </div>
+    <div uib-collapse="isCollapsedShipping">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-parent="#accordion" 
+          ng-click="isCollapsedVisibility = !isCollapsedVisibility; glyphiconChangeVisibility= (isCollapsedVisibility) ? 'glyphicon glyphicon-menu-right' : 'glyphicon glyphicon-menu-down'">
+          <span class={{glyphiconChangeVisibility}}></span>
+          Visibility</a>
+      </h4>
+    </div>
+    <div uib-collapse="isCollapsedVisibility">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-parent="#accordion" 
+          ng-click="isCollapsedOrganization = !isCollapsedOrganization; glyphiconChangeOrganization= (isCollapsedOrganization) ? 'glyphicon glyphicon-menu-right' : 'glyphicon glyphicon-menu-down'">
+          <span class={{glyphiconChangeOrganization}}></span>
+          Organization</a>
+      </h4>
+    </div>
+    <div uib-collapse="isCollapsedOrganization">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top:20px">
+    <div class="col-md-6">
+      <label for="numberOfProductsId">Number of products:</label>
+      <input type="number" id="numberOfProductsId">
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top:20px">
+    <div class="col-md-6" >
+      <button type="button" class="btn btn-primary" ng-click = "APCtrl.test()" >
+        Start Adding Products
+      </button>
+    </div>
+  </div>
+  
+</div>
+
