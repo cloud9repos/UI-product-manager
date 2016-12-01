@@ -9,25 +9,18 @@
                     
     function AddProductsCtrl($scope) {
         
-        //initialize collapse settings
-        initiallizeCollapseSetting($scope)
-        
         var self = this
         
-        self.test = function() {
-            var self = this
-            
-            setTimeout(test2, 5000);
-            console.log("clicked")
+        //initialize collapse settings
+        self.initiallizeCollapseSetting($scope)
+        
+        $scope.submit = function() {
+            return self.submitAddProducts($scope)
         }
         
     }
     
-    var test2 = function() {
-        console.log("test tme")
-    }
-    
-    var initiallizeCollapseSetting = function($scope) {
+    AddProductsCtrl.prototype.initiallizeCollapseSetting = function($scope) {
         
         $scope.isCollapsedDI = true;
         $scope.glyphiconChangeDI = 'glyphicon glyphicon-menu-right'
@@ -48,5 +41,14 @@
         $scope.glyphiconChangeOrganization = 'glyphicon glyphicon-menu-right'
         
     }
+    
+    AddProductsCtrl.prototype.submitAddProducts = function($scope) {
+        var self = this
+        console.log("sdfsr")
+        if ($scope.text) {
+              console.log($scope.text)
+              $scope.text = '';
+            }
+    } 
     
 }())
