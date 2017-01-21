@@ -8,7 +8,8 @@
                             [
                             "ui.router",
                             "ui.mask",
-                            "ui.bootstrap"]);
+                            "ui.bootstrap",
+                            "multipleSelect"]);
                             
     app.config(["$stateProvider",
                 "$urlRouterProvider",
@@ -40,7 +41,14 @@
                             controller: "UpdateProductsCtrl as updateProductsCtrlAls"
                         })
                         
-                        //update products
+                        //Contact us
+                        .state("contactUs", {
+                            url: "/contactUs",
+                            templateUrl: "app/faqs/contactUsView.html",
+                            controller: "contactUsCtrl as contactUsCtrlAls"
+                        })
+                        
+                        //faqs
                         .state("faqs", {
                             url: "/faqs",
                             templateUrl: "app/faqs/faqsView.html",

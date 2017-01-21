@@ -7,6 +7,7 @@
         <!-- Style sheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="css/app.css" rel="stylesheet" />
+        <link href="/bower_components/angularMultipleSelect/build/multiple-select.css" rel="stylesheet">
         
         <!-- Library Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -17,6 +18,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="bower_components/angular-ui-mask/src/mask.js"></script>
+        <script src="/bower_components/angular-multiple-select/build/multiple-select.js"></script>
         
         <!-- Application Script -->
         <script src="app/app.js"></script>
@@ -34,30 +36,30 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li>
+                    <li ng-class="{active: activeTab == 'dashboard'}" ng-click="activeTab = 'dashboard'">
                         <a ui-sref="dashboard">
                             Dashboard
                         </a>
                     </li>
-                    <li>
+                    <li ng-class="{active: activeTab == 'addProducts'}" ng-click="activeTab = 'addProducts'">
                         <a ui-sref="addProducts">
                             Bulk Product Add
                         </a>
                     </li>
-                    <li>
+                    <li ng-class="{active: activeTab == 'updateProducts'}" ng-click="activeTab = 'updateProducts'">
                         <a ui-sref="updateProducts">
                             Bulk Product Update
                         </a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a ui-sref="faqs">
+                    <li ng-class="{active: activeTab == 'contactUs'}" ng-click="activeTab = 'contactUs'">
+                        <a ui-sref="contactUs">
                             <span class="glyphicon glyphicon-envelope"></span>
                             Contact Us
                         </a>
                     </li>
-                    <li>
+                    <li ng-class="{active: activeTab == 'faqs'}" ng-click="activeTab = 'faqs'">
                         <a ui-sref="faqs">
                             <span class="glyphicon glyphicon-question-sign"></span>
                             FAQs

@@ -5,11 +5,19 @@
         .module("productManagement")
         .controller("AddProductsCtrl", 
                         ["$scope",
-                        AddProductsCtrl]);
+                        AddProductsCtrlFunc]);
                     
-    function AddProductsCtrl($scope) {
+    function AddProductsCtrlFunc($scope) {
         
         var self = this
+        
+        $scope.optionsList = [
+              "Java",
+              "C",
+              "C++",
+              "AngularJs",
+              "JavaScript"
+            ];
         
         //initialize collapse settings
         self.initiallizeCollapseSetting($scope)
@@ -20,7 +28,7 @@
         
     }
     
-    AddProductsCtrl.prototype.initiallizeCollapseSetting = function($scope) {
+    AddProductsCtrlFunc.prototype.initiallizeCollapseSetting = function($scope) {
         
         $scope.isCollapsedDI = true;
         $scope.glyphiconChangeDI = 'glyphicon glyphicon-menu-right'
@@ -42,13 +50,21 @@
         
     }
     
-    AddProductsCtrl.prototype.submitAddProducts = function($scope) {
+    /*
+        $scope.data: {
+            title
+        }
+    */
+    AddProductsCtrlFunc.prototype.submitAddProducts = function($scope) {
         var self = this
-        console.log("sdfsr")
-        if ($scope.text) {
-              console.log($scope.text)
-              $scope.text = '';
-            }
+        $scope.optionsList = [
+              "Java",
+              "C",
+              "C++",
+              "AngularJs",
+              "JavaScript"
+            ];
+        console.log("sd====== 2")
     } 
     
 }())

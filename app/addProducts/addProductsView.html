@@ -3,26 +3,33 @@
   <h2>Product Template</h2>
   <div class="panel-group" id="accordion">
     
-    <div class="row" style="margin-top:20px; margin-left:10px; margin-bottom:20px">
+    <div name="title" class="row" style="margin-top:20px; margin-left:2px; margin-bottom:20px">
       <div class="col-md-8">
         <div class="row">
           <label for="titleId" data-parent="#accordion">Title</label>
         </div>
         <div class="row">
-          <input type="text" ng-model="text" name="text" />
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row">
-          <label for="titleSuffixId">Title Suffix Rule</label>
-        </div>
-        <div class="row">
-          <input type="text" id="titleId">
+          <input type="text" ng-model="data.title" class="form-control input-md" name="text" />
         </div>
       </div>
     </div>
     
-    <div class="panel panel-default">
+    <div name="suffix rule" class="row" style="margin-bottom:20px">
+      <div class="col-md-4">
+        <label for="titleSuffixId">Title Suffix Rule</label>
+        <select name="suffixRule" ng-model="data.suffixData.rule" class="form-control">
+          <option value=""></option>
+          <option value="incrementNumber">Increment Number</option>
+        </select>
+      </div>
+      
+      <div class="col-md-4" ng-show="data.suffixData.rule == 'incrementNumber'">
+        <label for="titleSuffixId">Start Index</label>
+        <input type="number" min="0" ng-model="data.suffixData.indexValue" id="numberOfProductsId" class="form-control">
+      </div>
+    </div>
+    
+    <div name="Descrip and Images" class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-parent="#accordion" 
@@ -33,12 +40,31 @@
       </div>
       <div uib-collapse="isCollapsedDI">
         <div class="panel-body">
-          
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="col-md-8">
+              <div class="row">
+                <label>Description</label>
+              </div>
+              <div class="row">
+                <textarea type="text" ng-model="data.description" rows="5" class="form-control input-md"/>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="col-md-8">
+              <div class="row">
+                <label>Images URL</label>
+              </div>
+              <div class="row">
+                <input type="url" ng-model="data.imageUrl" class="form-control input-md"/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="panel panel-default">
+    <div name="Pricing" class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-parent="#accordion" 
@@ -49,12 +75,34 @@
       </div>
       <div uib-collapse="isCollapsedPrice">
         <div class="panel-body">
-          
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="col-md-4">
+              <div class="row">
+                <label>Price</label>
+              </div>
+              <div class="row">
+                <input type="number" step='0.01' min="0" placeholder='0.00' ng-model="data.price" class="form-control input-md"/>
+              </div>
+            </div>
+            <div class="col-md-4" style="margin-left:20px">
+              <div class="row">
+                <label>Compare at price</label>
+              </div>
+              <div class="row">
+                <input type="number" step='0.01' min="0" placeholder='0.00' ng-model="data.compareAtPrice" class="form-control input-md"/>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="data.isChargeTaxesOnThisProduct">Charge taxes on this product</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="panel panel-default">
+    <div name="Inventory" class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-parent="#accordion" 
@@ -65,12 +113,49 @@
       </div>
       <div uib-collapse="isCollapsedInventory">
         <div class="panel-body">
-          
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="col-md-4">
+              <div class="row">
+                <label>SKU (Stock Keeping Unit)</label>
+              </div>
+              <div class="row">
+                <input type="text" ng-model="data.SKU" class="form-control"/>
+              </div>
+            </div>
+            <span class="col-md-1"></span>
+            <div class="col-md-4">
+              <div class="row">
+                <label>Barcode (ISBN, UPC, GTIN, etc.)</label>
+              </div>
+              <div class="row">
+                <input type="text" ng-model="data.barcode" class="form-control"/>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-left:-5px; margin-bottom:10px">
+            <div class="col-md-4">
+              <label>Inventory policy</label>
+              <select class="form-control" ng-model="data.inventoryPolicy.rule" ng-init="data.inventoryPolicy.rule = 'dontTrackInventory'">
+                <option value="dontTrackInventory">Don't Track inventory</option>
+                <option value="trackInventory">Shopify tracks this product's inventory</option>
+              </select>
+            </div>
+            <span class="col-md-1" style="margin-left:-5px"></span>
+            <div class="col-md-4" ng-show="data.inventoryPolicy.rule == 'trackInventory'">
+              <label>Quantity</label>
+              <input type="number" ng-model="data.inventoryPolicy.quantity" class="form-control">
+            </div>
+          </div>
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="checkbox" ng-show="data.inventoryPolicy.rule == 'trackInventory'">
+              <label><input type="checkbox" ng-model="data.inventoryPolicy.purchaseWhenOutOfStock">Allow customers to purchase this product when it's out of stock</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="panel panel-default">
+    <div name="Shipping" class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-parent="#accordion" 
@@ -81,12 +166,47 @@
       </div>
       <div uib-collapse="isCollapsedShipping">
         <div class="panel-body">
-          
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="col-md-4">
+              <div class="row">
+                <label>Weight</label>
+              </div>
+              <div class="row">
+                <input type="number" min="0" step="any" placeholder="0.0" ng-model="data.weight" class="form-control"/>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="row">
+                <label></label>
+              </div>
+              <div class="row">
+                <select class="form-control" ng-model="data.weightUnit" ng-init="data.weightUnit = 'kg'" style="margin-top:5px">
+                  <option value="lb">lb</option>
+                  <option value="oz">oz</option>
+                  <option value="kg">kg</option>
+                  <option value="g">g</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-left:-5px; margin-bottom:10px">
+            <div class="col-md-4">
+              <label>Fulfillment service</label>
+              <select class="form-control" ng-model="data.fulfillmentService" ng-init="data.fulfillmentService = 'manual'">
+                <option value="manual">Manaul</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="data.isShippingRequired">This product requires shipping</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="panel panel-default">
+    <div name="Visibility" class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-parent="#accordion" 
@@ -97,12 +217,16 @@
       </div>
       <div uib-collapse="isCollapsedVisibility">
         <div class="panel-body">
-          
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="data.isOnlineStore">Online store</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="panel panel-default">
+    <div name="Organization" class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-parent="#accordion" 
@@ -113,21 +237,32 @@
       </div>
       <div uib-collapse="isCollapsedOrganization">
         <div class="panel-body">
-          
+          <div class="row" style="margin-left:10px; margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-4">
+                <label id="productType">Product Type</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <multiple-autocomplete ng-model="selectedList" suggestionsArr="optionsList"> </multiple-autocomplete>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="row" style="margin-top:20px">
-      <div class="col-md-6">
+    <div name="product count" class="row" style="margin-top:20px">
+      <div class="col-md-4">
         <label for="numberOfProductsId">Number of products:</label>
-        <input type="number" id="numberOfProductsId">
+        <input type="number" ng-model="data.productsCount" id="numberOfProductsId" max="999" min="0" class="form-control">
       </div>
     </div>
     
-    <div class="row" style="margin-top:20px">
-      <div class="col-md-6" >
-        <input type="submit" id="submit" value="Start Adding Products" />
+    <div name="Submit" class="row" style="margin-top:20px">
+      <div class="col-md-4" >
+        <input type="submit" id="submit" value="Start Adding Products" class="btn btn-primary"/>
       </div>
     </div>
     
