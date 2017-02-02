@@ -28,6 +28,8 @@
         
         <!-- Product Controllers -->
         <script src="app/addProducts/addProductsCtrl.js"></script>
+        <script src="app/updateProducts/updateProductsCtrl.js"></script>
+        <script src="app/dashboard/dashboardCtrl.js"></script>
         
     </head>
     
@@ -36,21 +38,25 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active: activeTab == 'dashboard'}" ng-click="activeTab = 'dashboard'">
-                        <a ui-sref="dashboard">
-                            Dashboard
-                        </a>
-                    </li>
-                    <li ng-class="{active: activeTab == 'addProducts'}" ng-click="activeTab = 'addProducts'">
-                        <a ui-sref="addProducts">
-                            Bulk Product Add
-                        </a>
-                    </li>
+                    
                     <li ng-class="{active: activeTab == 'updateProducts'}" ng-click="activeTab = 'updateProducts'">
                         <a ui-sref="updateProducts">
                             Bulk Product Update
                         </a>
                     </li>
+                    
+                    <li ng-class="{active: activeTab == 'addProducts'}" ng-click="activeTab = 'addProducts'">
+                        <a ui-sref="addProducts">
+                            Bulk Product Add===
+                        </a>
+                    </li>
+                    
+                    <li ng-class="{active: activeTab == 'dashboard'}" ng-click="activeTab = 'dashboard'">
+                        <a ui-sref="dashboard">
+                            Dashboard
+                        </a>
+                    </li>
+                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-class="{active: activeTab == 'contactUs'}" ng-click="activeTab = 'contactUs'">

@@ -8,16 +8,11 @@
                         AddProductsCtrlFunc]);
                     
     function AddProductsCtrlFunc($scope) {
+        console.log("test===========")
         
         var self = this
         
-        $scope.optionsList = [
-              "Java",
-              "C",
-              "C++",
-              "AngularJs",
-              "JavaScript"
-            ];
+        
         
         //initialize collapse settings
         self.initiallizeCollapseSetting($scope)
@@ -57,13 +52,7 @@
     */
     AddProductsCtrlFunc.prototype.submitAddProducts = function($scope) {
         var self = this
-        $scope.optionsList = [
-              "Java",
-              "C",
-              "C++",
-              "AngularJs",
-              "JavaScript"
-            ];
+        
         console.log("sd====== 2")
     } 
     

@@ -3,7 +3,7 @@
   "name": "ui-product-manager",
   
   "dependencies": {
-    "angular": "1.5.8",
+    "angular": "1.6.1",
     "angular-resource": "1.5.8",
     "angular-ui-router": "0.*.*",
     "angular-mocks": "1.*.*",

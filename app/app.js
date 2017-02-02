@@ -24,7 +24,7 @@
                         .state("dashboard", {
                             url: "/",
                             templateUrl: "app/dashboard/dashboardView.html",
-                            controller: "Dashboard as dashboardCtrlAls"
+                            controller: "DashboardCtrl as dashboardCtrlAls"
                         })
                         
                         //add products
