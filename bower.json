@@ -9,6 +9,6 @@
     "angular-mocks": "1.*.*",
     "angular-ui-mask": "*",
     "angular-bootstrap": "*",
-    "angular-multiple-select": "v1.*.*"
+    "kendo-ui-core": "*"
   }
 }

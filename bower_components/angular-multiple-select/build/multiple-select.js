@@ -42,7 +42,7 @@ angular.module("templates", []).run(["$templateCache", function($templateCache) 
                         }).then(function (response) {
                             scope.suggestionsArr = response.data;
                         }, function (response) {
-                            console.log("*****Angular-multiple-select **** ----- Unable to fetch list");
+                            console.log("*****Angular-multiple-select 2**** ----- Unable to fetch list");
                         });
                     };
 
@@ -50,7 +50,10 @@ angular.module("templates", []).run(["$templateCache", function($templateCache) 
                         if(scope.apiUrl != null && scope.apiUrl != "")
                             getSuggestionsList();
                         else{
-                            console.log("*****Angular-multiple-select **** ----- Please provide suggestion array list or url");
+                            scope.suggestionsArr = [
+                                'gop',
+                                'pop']
+                            console.log("*****Angular-multiple-select 2**** ----- Please provide suggestion array list or url");
                         }
                     }
 

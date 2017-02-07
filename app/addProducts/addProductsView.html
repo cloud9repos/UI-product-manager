@@ -238,16 +238,61 @@
       <div uib-collapse="isCollapsedOrganization">
         <div class="panel-body">
           <div class="row" style="margin-left:10px; margin-bottom:10px">
+            
             <div class="row">
               <div class="col-md-4">
-                <label id="productType">Product Type=====</label>
+                <label id="productType">Product Type</label>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+              <div class="col-md-4">
+                  <select kendo-drop-down-list
+                          k-data-text-field="'ProductName'"
+                          k-data-value-field="'ProductID'"
+                          k-data-source="singleSelectProductTypeOptions" 
+                          style="width: 250px; " 
+                          k-ng-model="data.selectedProductType"></select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-4">
+                <label id="productType">Vendor</label>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom:25px">
+              <div class="col-md-4">
+                  <select kendo-drop-down-list
+                          k-data-text-field="'ProductName'"
+                          k-data-value-field="'ProductID'"
+                          k-data-source="singleSelectProductTypeOptions" 
+                          style="width: 250px; " 
+                          k-ng-model="data.selectedProductType"></select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-4">
+                <label id="productType">Collections</label>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+              <div class="col-md-4">
+                  <select kendo-multi-select k-options="multiSelectCollectionsOptions" style="width: 250px;" k-ng-model="data.selectedProductTypes"></select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-4">
+                <label id="productType">Tags</label>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <multiple-autocomplete ng-model="selectedList" suggestionsArr="optionsList"> </multiple-autocomplete>
+                  <select kendo-multi-select k-options="multiSelectCollectionsOptions" style="width: 250px;" k-ng-model="data.selectedProductTypes"></select>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

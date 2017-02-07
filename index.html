@@ -5,12 +5,15 @@
         <title>Product Management</title>
         
         <!-- Style sheets -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
+        <link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
+        <link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.mobile.min.css" rel="stylesheet" />
         <link href="css/app.css" rel="stylesheet" />
-        <link href="bower_components/angular-multiple-select/build/multiple-select.css" rel="stylesheet">
         
         <!-- Library Scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Higher version of jquery is not compatible with kendo multi select lib-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-mocks/angular-mocks.js"></script>
@@ -18,7 +21,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="bower_components/angular-ui-mask/src/mask.js"></script>
-        <script src="bower_components/angular-multiple-select/build/multiple-select.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2014.2.716/js/kendo.ui.core.min.js"></script>
         
         <!-- Application Script -->
         <script src="app/app.js"></script>

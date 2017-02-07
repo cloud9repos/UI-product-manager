@@ -9,7 +9,7 @@
                             "ui.router",
                             "ui.mask",
                             "ui.bootstrap",
-                            "multipleSelect"]);
+                            "kendo.directives"]);
                             
     app.config(["$stateProvider",
                 "$urlRouterProvider",
